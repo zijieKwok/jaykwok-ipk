@@ -4,9 +4,9 @@
 # This is free software, licensed under the GNU General Public License v3.
 
 include $(TOPDIR)/rules.mk
-
-PKG_NAME:=luci-app-passwall
 PKG_VERSION:=4.74-1
+PKG_NAME:=luci-app-passwall
+
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_$(PKG_NAME)_Iptables_Transparent_Proxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_Nftables_Transparent_Proxy \
