@@ -1,4 +1,4 @@
-name: Update
+name: passwall.Update
 
 on: 
   repository_dispatch:
