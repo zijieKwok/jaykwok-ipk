@@ -1419,6 +1419,9 @@ msgstr "还原默认配置"
 msgid "One Click Check Update"
 msgstr "一键检查更新"
 
+msgid "One Click Check Update With CDN"
+msgstr "使用CDN一键检查更新"
+
 msgid "Failed to get the latest version. Please try again later!"
 msgstr "最新版本获取失败，请稍后再试！"
 
@@ -1665,8 +1668,8 @@ msgstr "版本内核更新失败，请检查网络或稍后再试！"
 msgid "Core Update Successful!"
 msgstr "版本内核更新成功！"
 
-msgid "Core Update Failed. Please Make Sure Enough Flash Memory Space And Try Again!"
-msgstr "版本内核更新失败，请确认设备闪存空间足够后再试！"
+msgid "Core Update Failed. Please Make Sure Enough Flash Memory Space or Selected Correct Core Platform And Try Again!"
+msgstr "版本内核更新失败，请确认设备闪存空间足够或内核平台正确后再试！"
 
 msgid "No Compiled Version Selected, Please Select In Update Page And Try Again!"
 msgstr "未选择编译版本，请到升级页面选择后再试！"
@@ -1699,7 +1702,7 @@ msgid "Has No Rules Field, Update Exit..."
 msgstr "规则部分校验失败，请稍后再试..."
 
 msgid "Has Incompatible Proxy-Group, Update Exit, Please Wait For OpenClash Update To Adapt..."
-msgstr "含有未支持的新策略组，更新停止，请等待 OpenClash 版本更新适配..."
+msgstr "含有未支持的策略组，更新停止，请等待 OpenClash 版本更新适配..."
 
 msgid "Check The Downloaded Rule File For Updates..."
 msgstr "检查下载的规则文件是否有更新..."
@@ -3521,3 +3524,30 @@ msgstr "绕过服务器地址"
 
 msgid "Bypassing Server Addresses And Preventing Duplicate Proxies"
 msgstr "绕过服务器地址，防止重复代理"
+
+msgid "Warning: Unsupported format, Proxies Address Skip Function Ignore Proxy-providers File"
+msgstr "警告：不支持的格式，绕过代理服务器地址功能已忽略代理集文件"
+
+msgid "Choose CDN For Downloading:"
+msgstr "请在下方选择一个 CDN 地址进行加速下载："
+
+msgid "Custom Your CDN URL"
+msgstr "自定义链接地址"
+
+msgid "Type CDN URL, Format Like"
+msgstr "输入链接地址，格式请参考"
+
+msgid "Please enter a valid URL!"
+msgstr "请参考示例输入正确的链接地址！"
+
+msgid "WAN Interface Name"
+msgstr "WAN 接口名称"
+
+msgid "Select WAN Interface Name For The Intranet Allowed"
+msgstr "为仅允许内网指定正确的 WAN 接口名称"
+
+msgid "LAN Interface Name"
+msgstr "LAN 接口名称"
+
+msgid "Select LAN Interface Name"
+msgstr "指定正确的 LAN 接口名称"
