@@ -9,7 +9,6 @@ local has_chnlist = api.fs.access("/usr/share/passwall/rules/chnlist")
 local has_chnroute = api.fs.access("/usr/share/passwall/rules/chnroute")
 
 m = Map(appname)
-api.set_apply_on_parse(m)
 
 local nodes_table = {}
 for k, e in ipairs(api.get_valid_nodes()) do
@@ -74,7 +73,7 @@ local doh_validate = function(self, value, t)
 		for i = 1, #val do
 			local v = val[i]
 			if v then
-				if not datatypes.ipmask4(v) then
+				if not datatypes.ipmask4(v) and not datatypes.ipmask6(v) then
 					flag = 1
 				end
 			end
