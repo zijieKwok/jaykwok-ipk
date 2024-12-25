@@ -38,9 +38,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local hosts= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(hosts, w) end)
 	for index, host in ipairs(hosts) do
-		if host:find("#") and host:find("#") == 1 then
+		if host:sub(1, 1) == "#" or host:sub(1, 8) == "geosite:" then
 			return value
 		end
 		if not datatypes.hostname(host) then
@@ -66,9 +67,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local ipmasks= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
 	for index, ipmask in ipairs(ipmasks) do
-		if ipmask:find("#") and ipmask:find("#") == 1 then
+		if ipmask:sub(1, 1) == "#" or ipmask:sub(1, 6) == "geoip:" then
 			return value
 		end
 		if not ( datatypes.ipmask4(ipmask) or datatypes.ipmask6(ipmask) ) then
@@ -96,9 +98,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local hosts= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(hosts, w) end)
 	for index, host in ipairs(hosts) do
-		if host:find("#") and host:find("#") == 1  then
+		if host:sub(1, 1) == "#" or host:sub(1, 8) == "geosite:" then
 			return value
 		end
 		if not datatypes.hostname(host) then
@@ -124,9 +127,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local ipmasks= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
 	for index, ipmask in ipairs(ipmasks) do
-		if ipmask:find("#") and ipmask:find("#") == 1 then
+		if ipmask:sub(1, 1) == "#" or ipmask:sub(1, 6) == "geoip:" then
 			return value
 		end
 		if not ( datatypes.ipmask4(ipmask) or datatypes.ipmask6(ipmask) ) then
@@ -152,9 +156,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local hosts= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(hosts, w) end)
 	for index, host in ipairs(hosts) do
-		if host:find("#") and host:find("#") == 1 then
+		if host:sub(1, 1) == "#" or host:sub(1, 8) == "geosite:" then
 			return value
 		end
 		if not datatypes.hostname(host) then
@@ -180,9 +185,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local ipmasks= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
 	for index, ipmask in ipairs(ipmasks) do
-		if ipmask:find("#") and ipmask:find("#") == 1 then
+		if ipmask:sub(1, 1) == "#" or ipmask:sub(1, 6) == "geoip:" then
 			return value
 		end
 		if not ( datatypes.ipmask4(ipmask) or datatypes.ipmask6(ipmask) ) then
@@ -208,9 +214,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local ipmasks= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
 	for index, ipmask in ipairs(ipmasks) do
-		if ipmask:find("#") and ipmask:find("#") == 1 then
+		if ipmask:sub(1, 1) == "#" then
 			return value
 		end
 		if not datatypes.ipmask4(ipmask) then
@@ -236,9 +243,10 @@ o.remove = function(self, section, value)
 end
 o.validate = function(self, value)
 	local ipmasks= {}
+	value = value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n")
 	string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
 	for index, ipmask in ipairs(ipmasks) do
-		if ipmask:find("#") and ipmask:find("#") == 1 then
+		if ipmask:sub(1, 1) == "#" then
 			return value
 		end
 		if not datatypes.ipmask6(ipmask) then
@@ -257,7 +265,7 @@ o.cfgvalue = function(self, section)
 	return fs.readfile(hosts) or ""
 end
 o.write = function(self, section, value)
-	fs.writefile(hosts, value:gsub("\r\n", "\n"))
+	fs.writefile(hosts, value:gsub("^%s+", ""):gsub("%s+$","\n"):gsub("\r\n","\n"):gsub("[ \t]*\n[ \t]*", "\n"))
 end
 o.remove = function(self, section, value)
 	fs.writefile(hosts, "")
@@ -265,35 +273,41 @@ end
 
 if api.fs.access(gfwlist_path) then
 	s:tab("gfw_list", translate("GFW List"))
-	o = s:taboption("gfw_list", TextValue, "gfw_list", "")
-	o.readonly = true
-	o.rows = 45
-	o.wrap = "off"
-	o.cfgvalue = function(self, section)
-		return fs.readfile(gfwlist_path) or ""
-	end
+	o = s:taboption("gfw_list", DummyValue, "_gfw_fieldset")
+	o.rawhtml = true
+	o.default = string.format([[
+		<div style="display: flex; align-items: center;">
+			<input class="btn cbi-button cbi-button-add" type="button" onclick="read_gfw()" value="%s" />
+			<label id="gfw_total_lines" style="margin-left: auto; margin-right: 10px;"></label>
+		</div>
+		<textarea id="gfw_textarea" class="cbi-input-textarea" style="width: 100%%; margin-top: 10px;" rows="40" wrap="off" readonly="readonly"></textarea>
+	]], translate("Read List"))
 end
 
 if api.fs.access(chnlist_path) then
 	s:tab("chn_list", translate("China List") .. "(" .. translate("Domain") .. ")")
-	o = s:taboption("chn_list", TextValue, "chn_list", "")
-	o.readonly = true
-	o.rows = 45
-	o.wrap = "off"
-	o.cfgvalue = function(self, section)
-		return fs.readfile(chnlist_path) or ""
-	end
+	o = s:taboption("chn_list", DummyValue, "_chn_fieldset")
+	o.rawhtml = true
+	o.default = string.format([[
+		<div style="display: flex; align-items: center;">
+			<input class="btn cbi-button cbi-button-add" type="button" onclick="read_chn()" value="%s" />
+			<label id="chn_total_lines" style="margin-left: auto; margin-right: 10px;"></label>
+		</div>
+		<textarea id="chn_textarea" class="cbi-input-textarea" style="width: 100%%; margin-top: 10px;" rows="40" wrap="off" readonly="readonly"></textarea>
+	]], translate("Read List"))
 end
 
 if api.fs.access(chnroute_path) then
 	s:tab("chnroute_list", translate("China List") .. "(IP)")
-	o = s:taboption("chnroute_list", TextValue, "chnroute_list", "")
-	o.readonly = true
-	o.rows = 45
-	o.wrap = "off"
-	o.cfgvalue = function(self, section)
-		return fs.readfile(chnroute_path) or ""
-	end
+	o = s:taboption("chnroute_list", DummyValue, "_chnroute_fieldset")
+	o.rawhtml = true
+	o.default = string.format([[
+		<div style="display: flex; align-items: center;">
+			<input class="btn cbi-button cbi-button-add" type="button" onclick="read_chnroute()" value="%s" />
+			<label id="chnroute_total_lines" style="margin-left: auto; margin-right: 10px;"></label>
+		</div>
+		<textarea id="chnroute_textarea" class="cbi-input-textarea" style="width: 100%%; margin-top: 10px;" rows="40" wrap="off" readonly="readonly"></textarea>
+	]], translate("Read List"))
 end
 
 m:append(Template(appname .. "/rule_list/js"))
