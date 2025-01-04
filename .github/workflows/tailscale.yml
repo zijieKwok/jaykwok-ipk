@@ -35,10 +35,10 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./tailscale
+        rm -rf ./packages
         
          
-        git clone --depth=1 https://github.com/zijieKwok/packages.git -b master
+        
         
         
         
