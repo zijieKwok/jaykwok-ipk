@@ -38,7 +38,7 @@ jobs:
         rm -rf ./tailscale
         
          
-        git_clon https://github.com/zijieKwok/packages.git ./master/net/tailscale
+        git_clon https://github.com/zijieKwok/packages.git ./tailscale
         
         
         
