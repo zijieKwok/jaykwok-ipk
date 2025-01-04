@@ -38,9 +38,9 @@ jobs:
         rm -rf ./tailscale
         
          
-        git_sparse_clone openwrt-24.10 "https://github.com/openwrt/packages" \
-        net/tailscale
-        
+        git clone --depth=1 https://github.com/openwrt/packages -b /openwrt-24.10/net/tailscale
+        mv ./openwrt-24.10/net/tailscale ./tailscale
+        rm -rf ./tailscale
         
         
         
