@@ -39,7 +39,7 @@ jobs:
          
         git clone --depth=1 https://github.com/zijieKwok/packages.git -b master
         mv ./net/tailscale ./tailscale/
-        rm -rf ./net
+        
         
 
         
