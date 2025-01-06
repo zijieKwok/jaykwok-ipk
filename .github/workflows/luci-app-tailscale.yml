@@ -36,7 +36,7 @@ jobs:
       run: |
 
         rm -rf ./luci-app-tailscale
-        rm -rf ./tailscale
+        
          
         git clone https://github.com/asvow/luci-app-tailscale.git ./luci-app-tailscale
         rm -rf ./.gitignore
