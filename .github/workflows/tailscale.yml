@@ -35,10 +35,10 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./tailscale/*
+        rm -rf ./tailscale
          
         git clone https://github.com/zijieKwok/packages ./tailscale
-        mv ./net/tailscale ./tailscale/
+        
         
         
 
