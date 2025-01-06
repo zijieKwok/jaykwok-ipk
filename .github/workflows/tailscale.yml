@@ -39,7 +39,7 @@ jobs:
          
         git clone https://github.com/zijieKwok/packages ./net/tailscale
         mv ./tailscale ./tailscale/
-        rm -rf ./tailscale
+        
         
 
         
