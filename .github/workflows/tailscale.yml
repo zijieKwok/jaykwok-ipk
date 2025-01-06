@@ -38,8 +38,8 @@ jobs:
         rm -rf ./tailscale/*
          
         git clone https://github.com/zijieKwok/packages ./tailscale
-        mv ./net/tailscale ./tailscale/
-         rm -rf ./net/tailscale
+        mv ./packages/net/tailscale ./tailscale/
+         rm -rf ./packages/net/tailscale
         
 
         
