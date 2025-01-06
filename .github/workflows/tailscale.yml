@@ -1,4 +1,4 @@
-name: Update net
+name: Update tailscale
 
 on: 
   repository_dispatch:
@@ -35,11 +35,11 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./tailscale
+        rm -rf ./tailscale/*
          
-        git clone https://github.com/zijieKwok/packages.git ./net
-        
-        
+        git clone https://github.com/zijieKwok/packages ./net/tailscale
+        mv ./tailscale ./tailscale/
+        rm -rf ./tailscale
         
 
         
