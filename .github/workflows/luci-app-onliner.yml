@@ -38,9 +38,9 @@ jobs:
         rm -rf ./luci-app-onliner
         
          
-        git clone https://github.com/kiddin9/kwrt-packages.git ./luci-app-onliner
-        mv ./onliner/luci-app-onliner/ ./
-        rm -rf ./luci-app-onliner/README.md
+        git clone https://github.com/kiddin9/kwrt-packages ./luci-app-onliner
+        
+        
         
         
 
