@@ -35,7 +35,7 @@ jobs:
     - name: Update
       run: |
 
-        rm -rf ./op-mosdns/v2ray-geodata
+        # rm -rf ./op-mosdns/v2ray-geodata
         
          
         # git clone https://github.com/sbwml/luci-app-mosdns -b v5-lua ./op-mosdns/tmp
