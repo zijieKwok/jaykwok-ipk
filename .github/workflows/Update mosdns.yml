@@ -40,8 +40,8 @@ jobs:
          
         git clone https://github.com/xiangfeidexiaohuo/extra-ipk ./op-mosdns
         git clone https://github.com/xiangfeidexiaohuo/extra-ipk ./op-mosdns/v2ray-geodata
-        mv ./xiangfeidexiaohuo/extra-ipk/op-mosdns ./op-mosdns/
-        rm -rf ./xiangfeidexiaohuo/extra-ipk
+        mv ./extra-ipk/op-mosdns ./op-mosdns/
+        rm -rf ./extra-ipk
         rm -rf ./op-mosdns/install.sh
         rm -rf ./op-mosdns/.github
         rm -rf ./op-mosdns/README.md
