@@ -38,13 +38,12 @@ jobs:
         rm -rf ./op-mosdns
         
          
-        git clone https://github.com/xiangfeidexiaohuo/extra-ipk ./op-mosdns
-        git clone https://github.com/xiangfeidexiaohuo/extra-ipk ./op-mosdns/v2ray-geodata
-        mv ./xiangfeidexiaohuo/extra-ipk/op-mosdns/ ./op-mosdns/
-        rm -rf ./xiangfeidexiaohuo/extra-ipk
-        rm -rf ./op-mosdns/install.sh
-        rm -rf ./op-mosdns/.github
-        rm -rf ./op-mosdns/README.md
+        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master ./op-mosdns/tmp
+        mv ./op-mosdns/tmp/luci-app-mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/mosdns ./op-mosdns/
+        mv ./op-mosdns/tmp/v2dat ./op-mosdns/
+        rm -rf ./op-mosdns/tmp     
+        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master/op-mosdns/v2ray-geodata ./op-mosdns/v2ray-geodata
         
 
         
