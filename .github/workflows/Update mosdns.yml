@@ -38,8 +38,8 @@ jobs:
         rm -rf ./op-mosdns
         
          
-        git clone https://github.com/sbwml/luci-app-mosdns ./op-mosdns
-        git clone https://github.com/sbwml/v2ray-geodata ./op-mosdns/v2ray-geodata
+        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master/op-mosdns ./op-mosdns
+        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master/op-mosdns ./op-mosdns/v2ray-geodata
         rm -rf ./op-mosdns/install.sh
         rm -rf ./op-mosdns/.github
         rm -rf ./op-mosdns/README.md
