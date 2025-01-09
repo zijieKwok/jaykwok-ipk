@@ -38,7 +38,7 @@ jobs:
         rm -rf ./op-mosdns
         
          
-        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master ./op-mosdns/tmp
+        git clone https://github.com/xiangfeidexiaohuo/extra-ipk -b master/op-mosdns ./op-mosdns/tmp
         mv ./op-mosdns/tmp/luci-app-mosdns ./op-mosdns/
         mv ./op-mosdns/tmp/mosdns ./op-mosdns/
         mv ./op-mosdns/tmp/v2dat ./op-mosdns/
