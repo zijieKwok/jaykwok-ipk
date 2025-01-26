@@ -233,11 +233,7 @@ check_ver() {
 
 get_new_port() {
 	port=$1
-	[ "$port" == "auto" ] && {
-		port=2082
-		local GET_NEW_PORT=$(get_cache_var "get_new_port")
-		[ -n "${GET_NEW_PORT}" ] && port=${GET_NEW_PORT}
-	}
+	[ "$port" == "auto" ] && port=2082
 	protocol=$(echo $2 | tr 'A-Z' 'a-z')
 	result=$(check_port_exists $port $protocol)
 	if [ "$result" != 0 ]; then
@@ -249,7 +245,6 @@ get_new_port() {
 		fi
 		get_new_port $temp $protocol
 	else
-		set_cache_var "get_new_port" "$port"
 		echo $port
 	fi
 }
@@ -1566,7 +1561,6 @@ start_dns() {
 			echolog "  * 未安装SmartDNS，默认使用Dnsmasq进行域名解析！"
 		fi
 	}
-	rm -rf $TMP_PATH2/smartdns_default*
 
 	[ "$DNS_SHUNT" = "chinadns-ng" ] && [ -n "$(first_type chinadns-ng)" ] && {
 		chinadns_ng_min=2024.04.13
